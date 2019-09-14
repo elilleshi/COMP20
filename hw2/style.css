@@ -5,15 +5,15 @@ body {
 h1 {
   color: maroon;
   font-weight: bold;
-  font-size: 32pt;
+  font-size: 40pt;
   font-family:fantasy;
 }
 
 p {
   color: maroon;
-  line-height: 2.5;
+  line-height: 2;
   font-style: oblique;
-  font-size: 24;
+  font-size: 14pt;
 }
 
 a {
