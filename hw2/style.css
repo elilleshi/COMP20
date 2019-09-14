@@ -1,0 +1,35 @@
+body {
+  background-color:#F5CBA7;
+}
+
+h1 {
+  color: maroon;
+  font-weight: bold;
+  font-size: 32pt;
+  font-family:fantasy;
+}
+
+p {
+  color: maroon;
+  font-style: oblique;
+}
+
+a {
+  color: green;
+  line-height: 2.5;
+  font-style:normal;
+}
+
+body{
+    text-align: center;
+}
+
+/* h1 {color : #ff0000; font-family:arial}
+p {font-size:18px }
+p.center {font-size:16px; text-align:center}
+.quoted {font-style: italic; font-size:14pt;text-indent:1in }
+A {font-family:arial; font-size:20px; color : #234567}
+a:hover {color : gray}
+p {
+  color: red;
+}
