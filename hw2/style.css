@@ -18,7 +18,7 @@ p {
 
 a {
   color: green;
-  line-height: 1.5;
+  line-height: 2;
   font-style:normal;
 }
 
@@ -28,6 +28,10 @@ body{
 
 div{
   overflow: hidden;
+}
+
+img{
+  max-width: none;
 }
 
 /* h1 {color : #ff0000; font-family:arial}
