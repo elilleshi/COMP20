@@ -26,12 +26,8 @@ body{
     text-align: center;
 }
 
-div{
-  overflow: hidden;
-}
-
-img{
-  max-width: none;
+.overflow{
+    overflow:hidden;
 }
 
 /* h1 {color : #ff0000; font-family:arial}
