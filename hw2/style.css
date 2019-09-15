@@ -14,6 +14,11 @@ h3{
   color:maroon;
 }
 
+h2{
+  color:maroon;
+  text-align: left;
+}
+
 p {
   color: maroon;
   line-height: 2;
