@@ -1,5 +1,6 @@
 body {
   background-color:#F5CBA7;
+  text-align: center;
 }
 
 h1 {
@@ -7,6 +8,10 @@ h1 {
   font-weight: bold;
   font-size: 40pt;
   font-family:inherit;
+}
+
+h3{
+  color:maroon;
 }
 
 p {
@@ -21,14 +26,6 @@ a {
   line-height: 2;
   font-style:normal;
   font-size: 14pt
-}
-
-body{
-    text-align: center;
-}
-
-h3{
-  color:maroon;
 }
 
 .overflow{
