@@ -23,11 +23,17 @@ p {
 
 a {
   color: green;
+  line-height: 2;
   font-style:normal;
   font-size: 14pt
 }
 
-.overflow{
+img {
+  max-width: 60%;
+  height: auto;
+}
+
+/* .overflow{
     overflow:hidden;
 }
 
@@ -39,7 +45,7 @@ a {
             max-width: 60%;
             max-height: 100vh;
             margin: auto;
-        }
+        } */
 
 /* h1 {color : #ff0000; font-family:arial}
 p {font-size:18px }
