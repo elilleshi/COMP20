@@ -23,7 +23,6 @@ p {
 
 a {
   color: green;
-  line-height: 2;
   font-style:normal;
   font-size: 14pt
 }
@@ -34,10 +33,10 @@ a {
 
 .imgbox {
             display: grid;
-            height: 70%;
+            height: 60%;
         }
 .center-fit {
-            max-width: 70%;
+            max-width: 60%;
             max-height: 100vh;
             margin: auto;
         }
