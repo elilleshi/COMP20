@@ -12,7 +12,7 @@ h1 {
 p {
   color: maroon;
   line-height: 2;
-  font-style: oblique;
+  font-style: inherit;
   font-size: 14pt;
 }
 
@@ -20,10 +20,15 @@ a {
   color: green;
   line-height: 2;
   font-style:normal;
+  font-size: 14pt
 }
 
 body{
     text-align: center;
+}
+
+h3{
+  color:maroon;
 }
 
 .overflow{
