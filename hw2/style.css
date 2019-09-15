@@ -32,6 +32,16 @@ a {
     overflow:hidden;
 }
 
+.imgbox {
+            display: grid;
+            height: 70%;
+        }
+.center-fit {
+            max-width: 70%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
 /* h1 {color : #ff0000; font-family:arial}
 p {font-size:18px }
 p.center {font-size:16px; text-align:center}
