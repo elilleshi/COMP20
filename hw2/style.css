@@ -38,6 +38,12 @@ img {
   height: 60%;
 }
 
+.header{
+  overflow: hidden;
+  background-color: #F5CBA7;
+  padding: 20px 10px;
+}
+
 /* .overflow{
     overflow:hidden;
 }
