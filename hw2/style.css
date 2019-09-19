@@ -34,7 +34,7 @@ footer{
 .header {
   overflow: hidden;
   background-color:#F7EC7F;
-  border-radius: 10px; 
+  border-radius: 100px; 
   padding: 20px 20px;
 }
 
@@ -56,15 +56,18 @@ footer{
   padding: 30px;
   font-size: 18px; 
   line-height: 2px;
-  border-radius: 6px;
 }
+
 .header a:hover {
   color: #355e3b;
   text-decoration: underline;
 }
+
 .header a.active {
   background-color: #F5CBA7;
   color: #355e3b;
+  border-radius: 100px;
+
 }
 
 .sticky {
