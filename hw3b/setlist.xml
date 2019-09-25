@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE setlist> 
+
+<setlist>
+
+      <header>
+        <title> Cover Band Setlist</title>
+      </header>
+
+    <song>
+        <title>Time No More</title>
+        <artist>Ethereal</artist>
+        <year>2019</year>
+        <genre>Gruge Rap</genre>
+    </song>
+
+    <song>
+        <title>Draco</title>
+        <artist>Future</artist>
+        <year>2017</year>
+        <genre>Trap</genre>
+    </song>
+
+    <song>
+        <title>Handful</title>
+        <artist>Father</artist>
+        <year>2019</year>
+        <genre>Rap</genre>
+    </song>
+
+    <song>
+        <title>Elastic</title>
+        <artist>Joey Purp</artist>
+        <year>2019</year>
+        <genre>Rap</genre>
+    </song>
+
+    <song>
+        <title>Unemployed</title>
+        <artist>Tierra Whack</artist>
+        <year>2019</year>
+        <genre>Rap</genre>
+    </song>
+
+    <song>
+        <title>Dior</title>
+        <artist>Pop Smoke</artist>
+        <year>2019</year>
+        <genre>Trap</genre>
+    </song>
+
+    <song>
+        <title>Yamaha</title>
+        <artist>Aleksandir</artist>
+        <year>2018</year>
+        <genre>House</genre>
+    </song>
+
+    <song>
+        <title>PPP</title>
+        <artist>Beach House</artist>
+        <year>2015</year>
+        <genre>Indie Rock</genre>
+    </song>
+
+    <song>
+        <title>Look In My Eyez</title>
+        <artist>Lil Duke</artist>
+        <year>2019</year>
+        <genre>Rap</genre>
+    </song>
+
+    <song>
+        <title>Flava</title>
+        <artist>Princess Nokia</artist>
+        <year>2017</year>
+        <genre>Rap</genre>
+    </song>
+
+
+</setlist>
