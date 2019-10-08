@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Joe's Hotdogs</title>
+
+		<style type="text/css">
+			body{
+				text-align: center;
+				font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter;
+				color: #000;
+				/*background-color: */
+			}
+			h1{
+				text-decoration: underline;
+			}
+			input{
+				width: 250px;
+				text-align: center;
+			}
+			.button {background-color: #000; color: #fff; display: inline-block; padding: 5px 5px 5px 5px; border: none;}
+		</style>
+	</head>
+
+	<body>
+		<h1> Joe's Hotdog Stand</h1>
+		<h3> Menu: </h3>
+		<p> Hotdogs: $3.25 <br> French Fries: $2.00<br> Drinks: $1.50 </p>
+		<p> Spend $20 or more, get 10% off! Prices do not include sales tax. </p>
+		<h3> Order Here: </h3>
+		
+		<form id="orderform">
+			<input type="number" id="hotdogs" placeholder="Input desired number of HOTDOGS"> <br>
+			<input type="number" id="french_fries" placeholder="Input desired number of FRENCH FRIES "> <br>
+			<input type="number" id="drinks" placeholder="Input desired number of DRINKS"> <br> <br>
+			<input class='button' type='button' onclick='getOrder()' value="Place your order!">
+		</form>
+
+	</body>
+
+	<script language="javascript" type="text/javascript">
+
+			var menu = {'hotdogs': 3.25, 'french_fries': 2.00, 'drinks': 1.50};
+			var order = {'hotdogs': 0, 'french_fries': 0, 'drinks': 0};
+			var sales_tax = 0.0625
+			var discount_min = 20
+			var discount = 0.90
+
+			function getOrder()
+			{
+				if(document.getElementById('hotdogs').value != ""){
+					order['hotdogs'] = document.getElementById('hotdogs').value;				
+				}
+		
+				if(document.getElementById('french_fries').value != ""){
+					order['french_fries'] = document.getElementById('french_fries').value;				
+				}
+				if(document.getElementById('drinks').value != ""){
+					order['drinks'] = document.getElementById('drinks').value;
+				}
+				
+				var base_total = (order['hotdogs'] * menu['hotdogs']) + (order['french_fries'] * menu['french_fries']) + (order['drinks'] * menu['drinks']);
+				var tax = sales_tax * base_total;
+				var total = base_total + tax;
+
+				//alert statements
+				var ordered = 'Items ordered: ' + order['hotdogs'] + ' hotdogs, ' + order['french_fries'] + ' french fries, ' + order['drinks'] + ' drinks.'
+				var subtotal = 'Subtotal: $' + base_total.toFixed(2);
+				var tax_print = 'Tax (6.25%): $' + tax.toFixed(2);
+				var total_print = 'Total: $' + total.toFixed(2);
+
+				if (base_total >= discount_min){
+					var discounted_total = base_total * discount;
+					var discount_amt = base_total * 0.10;
+					var tax = sales_tax * discounted_total;
+					var total = tax + discounted_total;
+					
+					//alert statements
+					var discount_disp = 'Discount (10% off): $' + discount_amt.toFixed(2);
+					var tax_print = 'Tax (6.25%): $' + tax.toFixed(2);
+					var total_print = 'Total: $' + total.toFixed(2);
+					// alert for discounted purchases
+					alert(ordered + '\n' + discount_disp + '\n' + tax_print + '\n' + total_print)
+				}
+
+				else{
+					// alert for regular purchases
+					alert(ordered + '\n' + subtotal + '\n' + tax_print + '\n' + total_print)
+				}
+			}			
+
+		</script>
+
+</html>

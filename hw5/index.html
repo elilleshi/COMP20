@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Amicable Numbers Problem</title>
+
+	<style type="text/css">
+		body{
+			text-align: center;
+			font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter;
+		}
+		h1{
+			text-decoration: underline;
+		}
+		.button {display: inline-block; padding: 10px 10px 10px 10px;}
+	</style>
+
+
+	</head>
+
+	<body>
+
+		<form>
+			<h1> Amicable Numbers Problem  </h1>
+			<h3> Please input 2 integers to determine whether their factors sum to the other number! </h3>
+			<input type="text" id="num1" placeholder="Input number"> <br>
+			<input type="text" id="num2" placeholder="Input number"> <br>
+			<input class='button' type='button' onclick='AmicableCheck()' value="Submit">
+		</form>
+		<br>
+		<div id="number1"></div>
+		<div id="number2"></div>
+		<div id="answer"></div>
+
+	</body>
+
+<script language="javascript" type="text/javascript">
+
+		// event handler 
+		function AmicableCheck(){
+
+			if(document.getElementById('num1').value != ""){
+				var num1 = document.getElementById('num1').value;
+			}
+			if(document.getElementById('num2').value != ""){
+					var num2 = document.getElementById('num2').value;	
+			}
+
+			var output1 = "Number 1: " + num1; 
+			document.getElementById('number1').innerHTML=output1;
+			var output2 = "Number 2: " + num2;
+			document.getElementById('number2').innerHTML=output2;
+
+			// use funcitons to determine 
+			var num1_factors = getFactors(num1);
+			var num2_factors = getFactors(num2);
+			var sum_factors_1 = addFactors(num1_factors);
+			var sum_factors_2 = addFactors(num2_factors);
+
+
+			if (sum_factors_1 == num2 && sum_factors_2 == num1){
+    			document.getElementById('answer').innerHTML='Amicable numbers!';
+			}
+			else{
+				 document.getElementById('answer').innerHTML='Not Amicable numbers.';
+			}
+		}
+
+
+		function isFactor(num1, num2){
+			if ((num1%num2) == 0){
+					return true;
+				}
+				else {
+					return false;
+				}
+		}
+		// if (isFactor(120,30)) {
+		// 	console.log('IsFactor() works');
+		// } else {
+		// 	console.log('IsFactor() broken');
+		// }
+
+
+		function addFactors(array){
+			var factor_sum = 0;
+			for (var i = 0; i < array.length; i++){
+				factor_sum = factor_sum + array[i];
+			}
+			return factor_sum;
+		}
+		//console.log(addFactors([5, 5, 10, 20]))
+
+
+		function showFactors(array){
+			for (var i = 0; i < array.length; i++) {
+				document.write(array[i] + " ");
+			}
+		}
+		// console.log(showFactors([1,2,3,4,5]))
+
+
+		function getFactors(num){
+			var factors = [],
+			r = 0;
+
+			for(var i = 1; i < num; i++){
+				r = num/i;
+
+			    if(r === Math.floor(r)){
+			    	factors.push(i); 
+			    }
+			 }
+			  return factors;
+		}
+		// console.log(getFactors(120))
+
+
+</script>
+
+</html>

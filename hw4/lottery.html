@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Mass Lottery “Lucky for Life”</title>
+		<h1> Mass Lottery "Lucky for Life" </h1>
+		<h2> Please input your guesses below! The page will recieve an alert with your payout. </h2>
+		
+	</head>
+
+
+	<style type="text/css">
+		body{
+			text-align: center;
+			font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter;
+			background-color: #B4D0A4;
+			color: #1E4508;
+		}
+		h1{
+			text-decoration: underline;
+		}
+		input{
+			width: 300px;
+			text-align: center;
+		}
+		.button {background-color: #1E4508; color: #B4D0A4; display: inline-block; padding: 5px 5px 5px 5px; border: none;}
+	</style>
+
+	<script language="javascript" type="text/javascript">
+
+			// fill array with randomized balls
+			balls = [];
+			for (i = 0; i < 5; i++) {
+				var ball = Math.floor(Math.random()*47 + 1);
+				balls[i] = ball;
+			}
+
+			var real_lucky = Math.floor(Math.random()*17 + 1);
+			balls[5] = real_lucky;
+
+			//output array as is
+			document.write("<h2>The winning numbers are: </h2>");
+			for (i = 0; i < 6; i++) {
+				document.write(balls[i] + " ");
+			}
+			document.write("<br>" + "Lucky Number: " + real_lucky);
+
+			//output sorted array 
+			document.write("<h2>The winning numbers SORTED are: </h2>");
+			var sorted = balls.slice().sort(function(a,b) {return a - b;})
+			for (i = 0; i < 6; i++) {
+				document.write(sorted[i] + " ");
+			}
+
+			function getPicks()
+			{
+				var input_numbers = document.getElementById("numbers").value;
+				var input_lucky = document.getElementById("lucky").value;
+				var input = input_numbers.split(" ");
+				for(var i=0; i<input.length; i++){ //converting to ints
+					input[i] = +input[i]; 
+				} 
+				input.push(+input_lucky)
+				return input
+			}	
+
+			function checkPicks() 
+			{
+				// get input and store in array
+				input = getPicks()
+				var input_lucky = input[5];
+
+				// remove lucky ball from sorted
+				for(var i = 0; i < sorted.length; i++){ 
+				   if ( sorted[i] === real_lucky) {
+				     sorted.splice(i, 1); 
+				     i--;
+				   }
+				}
+
+				// compare input[] against correct array sorted[]
+				var match_count = 0, lucky_match=false;
+
+				for (var i = 0; i < 5; i++) {
+					var elem = input[i];
+					if (sorted.includes(elem)) {
+						match_count++;
+					}
+				}
+				// check lucky number
+				if (real_lucky == input_lucky){
+					lucky_match = true;
+				}
+
+				// Payout Calculator
+				if ((match_count == 5) && lucky_match){
+					alert("Payout: $7,000 a WEEK for LIFE!" + "\n" + "Probability: 1 in 30,821,472")
+				}
+				else if ((match_count == 5) && !lucky_match){
+					alert("Payout: $25,000 a YEAR for LIFE!" + "\n" + "Probability: 1 in 1,813,027")
+				}
+				else if ((match_count == 4) && lucky_match){
+					alert("Payout: $5,000" + "\n" + "Probability: 1 in 143,355")
+				}
+				else if ((match_count == 4) && !lucky_match){
+					alert("Payout: $200" + "\n" + "Probability: 1 in 8,432")
+				}
+				else if ((match_count == 3) && lucky_match){
+					alert("Payout: $150" + "\n" + "Probability: 1 in 3,413")
+				}
+				else if  ((match_count == 3) && !lucky_match){
+					alert("Payout: $20" + "\n" + "Probability: 1 in 200")
+				}
+				else if ((match_count == 2) && lucky_match){
+					alert("Payout: $25" + "\n" + "Probability: 1 in 249")
+				}
+				else if ((match_count == 2) && !lucky_match){
+					alert("Payout: $3" + "\n" + "Probability: 1 in 14")
+				}
+				else if ((match_count == 1) && lucky_match){
+					alert("Payout: $6" + "\n" + "Probability: 1 in 49")
+				}
+				else if ((match_count == 0) && lucky_match){
+					alert("Payout: $4" + "\n" + "Probability: 1 in 32")
+				}
+				else {alert("No Payout! Try again.")}
+			}
+
+		</script>
+
+
+		<body>
+			<form>	
+				<h3> Payout Calculator: </h3>
+				<input type="text" id="numbers" placeholder="Input 5 numbers 0-48, space delimited"> <br>
+				<input type="text" id="lucky" placeholder="Input a Lucky Ball number 0-18"> <br><br>
+				<input class= 'button' type='button' onclick='checkPicks()' value="See if you won!">
+			</form>
+		</body>
+
+</html>
