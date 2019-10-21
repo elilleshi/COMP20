@@ -28,12 +28,12 @@
 		text-align: center;
 		font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter;
 	}
-    #center {
-      text-align: center;
-    }
+	#center {
+    	text-align: center;
+  }
     #large_div{
 		padding: 30px 0px 0px 0px;
-    }
+	}
 	.spacing{
 		padding: 50px 0px 0px 0px;
 		display:inline-block;
@@ -42,8 +42,8 @@
 		border-style: solid;
 		border-width: 2px;
 		border-color: black;
-        width: 50%;
-        display:inline-block;
+		width: 50%;
+		display:inline-block;
 	}
 	img{
 		border-style: solid;
@@ -150,14 +150,14 @@
 	//fill bottom div on mouse-on
 	function mouse_on(i){
 	  return function(){
-	  		// resize small_image 
-	  		var img = document.createElement("IMG");
-			img.src = gallery[i].small_img;
-			img.height = 300;
-			// append to bottom div and fadeIn
-			var display = $(img).hide();
-			$('#large_div').append(display);
-			display.fadeIn(1000);
+  		// resize small_image 
+  		var img = document.createElement("IMG");
+		img.src = gallery[i].small_img;
+		img.height = 300;
+		// append to bottom div and fadeIn
+		var display = $(img).hide();
+		$('#large_div').append(display);
+		display.fadeIn(1000);
 	  }
 	}
 
