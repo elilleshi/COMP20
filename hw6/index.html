@@ -1,0 +1,164 @@
+<!doctype html>
+
+<!-- 
+	Eliriana Lleshi 
+	COMP20 Homework #6 
+	The Gallery
+	index.html
+-->
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="jquery-3.4.1.min.js"></script>
+	<title> HW 6: The Gallery </title>
+</head>
+
+<style>
+	h1{
+		text-decoration: underline;
+		font-size: 80pt;
+	}
+	h1{
+		font-size: 28pt;
+	}
+	body{
+		background-color: #FBEEC1;
+		text-align: center;
+		font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter;
+	}
+    #center {
+      text-align: center;
+    }
+	.spacing{
+		padding: 50px 0px 0px 0px;
+		display:inline-block;
+	}
+
+	.description{
+		border-style: solid;
+		border-width: 2px;
+		border-color: black;
+        width: 50%;
+        display:inline-block;
+	}
+
+	img{
+		border-style: solid;
+		border-width: 20px;
+		border-color: black;
+	}
+
+</style>
+
+<body>
+	<h1> The Gallery </h1>
+	<h2> Hover over any image to enlarge it. Click any image for more information.</h2>
+
+    <div id="center">    
+    	<div id="text" class="description"> </div>
+    </div>
+
+	<div id="img1" class="spacing"> </div>
+	<div id="img2" class="spacing"> </div>
+	<div id="img3" class="spacing"> </div>
+	<div id="img4" class="spacing"> </div>
+	<div id="img5" class="spacing"> </div>
+
+	<div id="large_div"> </div>
+
+</body>
+
+
+
+<script language="javascript" type="text/javascript">
+
+	// constructor
+	function artwork(name, price, small_img, large_img) {
+		this.name = name;
+		this.price = price;
+		this.small_img = small_img;
+		this.large_img = large_img; //not used in implementation
+
+	}
+
+	// Create and store images in structure 
+	gallery = [];
+	art1 = new artwork("Starry Night", 50000 , "starrynight.jpg", "large_img");
+	gallery.push(art1);
+	art2 = new artwork("The Scream", 20000 , "thescream.jpg", "large_img");
+	gallery.push(art2);
+	art3 = new artwork("The Kiss", 30000, "thekiss.jpg", "large_img");
+	gallery.push(art3);
+	art4 = new artwork("The Great Wave", 15000, "wave.jpg", "large_img");
+	gallery.push(art4);
+	art5 = new artwork("Persistance of Memory", 25000, "memory.jpg", "large_img");
+	gallery.push(art5);
+
+	// Display images
+	for (var i = 0; i < 5; i++){
+		 var img = document.createElement("IMG");
+		 img.src = gallery[i].small_img;
+		 img.height = 120;
+		 var div_name = "img" + String(i+1);
+		 document.getElementById(div_name).appendChild(img);
+	 }
+
+/*------------------------------------------------------------------*/
+
+// Display descriptions on-click
+
+	$(document).ready(function(){
+		  for(var i = 1; i < 6; i++) {
+		    $('#img' + i).click(output_des(i-1));
+		  }
+		});
+
+	function output_des(i){
+	  return function(){
+	  	var output = buildDescription(i);
+		document.getElementById("text").innerHTML = output;
+		setTimeout(hideDescription, 5000);
+	  }
+	}
+
+	//format output string
+	function buildDescription(i){
+	 	var name = String(gallery[i].name);
+	 	var price = String(gallery[i].price);
+	 	var string = "<b> Title: </b>" + name + "<br> <b> Price: </b>$" + price;
+	 	return string;
+	}
+
+	// hide div after 5 seconds
+	function hideDescription(){
+		$("#text").empty();
+	}
+
+/*------------------------------------------------------------------*/
+
+// Display enlarged image upon hover 
+
+	$(document).ready(function(){
+		  for(var i = 1; i < 6; i++) {
+		    $('#img' + i).hover(output_img(i-1)).mouseleave(function () 
+		    	{$("#large_div").empty();}
+		    	);
+		    ;}
+		}
+	);
+
+	function output_img(i){
+	  return function(){
+		 var img = document.createElement("IMG");
+		 img.src = gallery[i].small_img;
+		 img.height = 300;
+		 document.getElementById("large_div").appendChild(img)
+	  }
+	}
+
+ </script>
+
+
+</html>
