@@ -31,11 +31,13 @@
     #center {
       text-align: center;
     }
+    #large_div{
+		padding: 30px 0px 0px 0px;
+    }
 	.spacing{
 		padding: 50px 0px 0px 0px;
 		display:inline-block;
 	}
-
 	.description{
 		border-style: solid;
 		border-width: 2px;
@@ -43,16 +45,16 @@
         width: 50%;
         display:inline-block;
 	}
-
 	img{
 		border-style: solid;
 		border-width: 20px;
 		border-color: black;
 	}
-
 </style>
 
+
 <body>
+
 	<h1> The Gallery </h1>
 	<h2> Hover over any image to enlarge it. Click any image for more information.</h2>
 
@@ -69,7 +71,6 @@
 	<div id="large_div"> </div>
 
 </body>
-
 
 
 <script language="javascript" type="text/javascript">
@@ -142,19 +143,28 @@
 
 	$(document).ready(function(){
 		  for(var i = 1; i < 6; i++) {
-		    $('#img' + i).hover(output_img(i-1)).mouseleave(function () 
-		    	{$("#large_div").empty();}
-		    	);
-		    ;}
-		}
-	);
+		    $('#img' + i).hover(mouse_on(i-1), mouse_off());
+		  }
+		});
 
-	function output_img(i){
+	// fill bottom div on mouse-on
+	function mouse_on(i){
 	  return function(){
-		 var img = document.createElement("IMG");
-		 img.src = gallery[i].small_img;
-		 img.height = 300;
-		 document.getElementById("large_div").appendChild(img)
+	  		// resize small_image 
+	  		var img = document.createElement("IMG");
+			img.src = gallery[i].small_img;
+			img.height = 300;
+			// append to bottom div and fadeIn
+			var display = $(img).hide();
+			$('#large_div').append(display);
+			display.fadeIn(1000);
+	  }
+	}
+
+	//empty bottom div on mouse-off
+	function mouse_off(){
+	  return function(){
+		$("#large_div").empty();
 	  }
 	}
 
