@@ -10,25 +10,17 @@ $(function() {
        $.each(data.songs, function(i, f) {
           var tblRow = "<tr>" + "<td>" + f.title + "</td>" +
            "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>"
-           $(tblRow).appendTo("#userdata tcontent");
+           $(tblRow).appendTo("#userdata tbody");
      });
    });
 });
 
-// $(function() {
-//    var serialized = [];
-//    $.getJSON('setlist.json', function(data) {
-//        $.each(data.serial, function(i, f) {
-//           var serialized = f.title + "\n" + f.artist + "\n" + f.year + "\n"  + f.genre + "\n";
-//            $(serialized).appendTo("#serialize p");
-//      });
-//    });
-// });
 
 </script>
 
 </head>
   <body>
+
     <div>
          <table id= "userdata" border="2">
         <thead>
@@ -39,13 +31,10 @@ $(function() {
               </thead>
             <tbody>
             </tbody>
-
          </table>
+      </div>
     </div>
-
-<!--     <div id="serialize">
-    <p> </p>
-    </div> -->
-
   </body>
+
+
 </html>
