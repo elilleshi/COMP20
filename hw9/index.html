@@ -15,20 +15,16 @@ $(function() {
    });
 });
 
-$(function() {
-   var songs = [];
-   $.getJSON('setlist.json', function(data) {
-       $.each(data.songs, function(i, f) {
-           $(f).appendTo("#serial");
-     });
-   });
-});
-
 </script>
 
-
 </head>
+
+
+
   <body>
+
+    <script src="setlist.json"> </script>
+
     <div>
          <table id= "userdata" border="2">
         <thead>
@@ -41,10 +37,8 @@ $(function() {
             </tbody>
          </table>
       </div>
-
-
-    <div id="serial">
-
     </div>
   </body>
+
+
 </html>
