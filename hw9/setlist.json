@@ -1,0 +1,66 @@
+{ "songs": [
+    {
+      "title": "Time No More",
+      "artist": "Ethereal",
+      "year": "2019",
+      "genre": "Rap"
+    },
+  { 
+      "title": "God Is",
+      "artist": "Kanye West",
+      "year": "2019",
+      "genre": "Gospel"
+    },
+    {
+      "title": "Baby's Arms",
+      "artist": "Kurt Vile",
+      "year": "2019",
+      "genre": "Alternative"
+    },
+  {
+    "title": "Golden Days",
+    "artist": "Whitney",
+    "year": "2016",
+    "genre": "Alternative"
+  },
+  {
+    "title": "BOP",
+    "artist": "DaBaby",
+    "year": "2019",
+    "genre": "Trap"
+  },
+  {
+    "title": "Multi-Love",
+    "artist": "Unknown Mortal Orchestra",
+    "year": "2015",
+    "genre": "Alternative"
+  },
+  {
+    "title": "101 FM",
+    "artist": "Little Simz",
+    "year": "2019",
+    "genre": "Hip-Hop"
+  },
+  {
+    "title": "Brothers",
+    "artist": "Maxo Kream",
+    "year": "2019",
+    "genre": "Rap"
+  },
+  {
+    "title": "In the Morning of the Magicians",
+    "artist": "The Flaming Lips",
+    "year": "2002",
+    "genre": "Alternative Rock"
+  },
+  {
+    "title": "Codeine Crazy",
+    "artist": "Future",
+    "year": "2019",
+    "genre": "Trap"
+  }
+],
+"permissions": [
+    "file:///Users/eli/Desktop/comp20/hw9/index.html"
+  ]
+}

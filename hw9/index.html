@@ -1,0 +1,42 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+   var songs = [];
+
+   $.getJSON('setlist.json', function(data) {
+       $.each(data.songs, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.title + "</td>" +
+           "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+   });
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2">
+  <thead>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Year</th>
+            <th>Genre</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>
