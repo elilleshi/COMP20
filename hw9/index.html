@@ -15,15 +15,15 @@ $(function() {
    });
 });
 
-$(function() {
-   var serialized = [];
-   $.getJSON('setlist.json', function(data) {
-       $.each(data.serial, function(i, f) {
-          var serialized = f.title + "\n" + f.artist + "\n" + f.year + "\n"  + f.genre + "\n";
-           $(serialized).appendTo("#serialize p");
-     });
-   });
-});
+// $(function() {
+//    var serialized = [];
+//    $.getJSON('setlist.json', function(data) {
+//        $.each(data.serial, function(i, f) {
+//           var serialized = f.title + "\n" + f.artist + "\n" + f.year + "\n"  + f.genre + "\n";
+//            $(serialized).appendTo("#serialize p");
+//      });
+//    });
+// });
 
 </script>
 
@@ -43,9 +43,9 @@ $(function() {
          </table>
     </div>
 
-    <div id="serialize">
+<!--     <div id="serialize">
     <p> </p>
-    </div>
+    </div> -->
 
   </body>
 </html>
