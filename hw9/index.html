@@ -6,17 +6,14 @@
 
 $(function() {
    var songs = [];
-   var serial = [];
    $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
           var tblRow = "<tr>" + "<td>" + f.title + "</td>" +
            "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>"
-           $(tblRow).appendTo("#userdata tbody");
-     });
-
-        $.each(data.serial, function(i, f) {
           var serialized = f.title + "\n" + f.artist + "\n" + f.year + "\n"  + f.genre + "\n"
-           $(t).appendTo("#serial tbody");
+           $(tblRow).appendTo("#userdata tbody");
+            $(t).appendTo("#serial p");
+
      });
 
    });
@@ -41,6 +38,10 @@ $(function() {
             </tbody>
          </table>
       </div>
+    </div>
+
+    <div id="serial">
+<p></p>
     </div>
   </body>
 
