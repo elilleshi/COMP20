@@ -5,15 +5,16 @@
 <script>
 
 $(function() {
-   var songs = [];
+   var setlist = [];
    $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
           var tblRow = "<tr>" + "<td>" + f.title + "</td>" +
            "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>";
            $(tblRow).appendTo("#userdata tbody");
 
-          var tblRow1 = f.title + f.artist + f.year + f.genre; 
-           $(tblRow1).appendTo("#serial p");
+          var serial = f.title + f.artist + f.year + f.genre; 
+          alert(serial)
+           $(serial).appendTo("#serial p");
            
      });
    });
