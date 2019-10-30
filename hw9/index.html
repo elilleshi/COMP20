@@ -26,7 +26,8 @@ function find_songs(genre){
     $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
           if(f.genre == genre){
-            console.log(f.title);
+            var title = f.title;
+            console.log("here" + title);
           }
      });
    });
