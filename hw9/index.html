@@ -9,9 +9,9 @@
 $(function() {
    var setlist = [];
    $.getJSON('setlist.json', function(data) {
-       $.each(data.songs, function(i, f) {
-
-          var serial = f; 
+       $.each(data, function(i, f) {
+          var serial = data[i];
+          // var serial = f; 
           $("#serialized").append(serial);
 
           var tabular = "<tr>" + "<td>" + f.title + "</td>" +
@@ -38,7 +38,7 @@ $(function() {
 
     <div>
     <div>
-         <table id= "tableid"  >
+         <table id= "tableid"  border="1">
         <thead>
                   <th>Title</th>
                   <th>Artist</th>
