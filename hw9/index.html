@@ -14,7 +14,7 @@ $(function() {
  
           var serial = f.title + ": \n" + f.artist + ": \n" + f.year + ": \n" + f.genre; 
           alert(serial)
-           $(serial).appendTo("#serial p");
+           $("#serialized").appendTo(serial);
            
      });
    });
@@ -41,8 +41,7 @@ $(function() {
       </div>
     </div>
 
-    <div id="serial">
-<p></p>
+    <div id="serialized">
     </div>
 
   </body>
