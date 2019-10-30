@@ -37,7 +37,7 @@
 
     <div>
     <div>
-         <table id= "tableid"  border="1">
+         <table id= "tableid"  border="3">
         <thead>
                   <th>Title</th>
                   <th>Artist</th>
@@ -75,6 +75,9 @@
       var genre_songs = [];
       $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
+          console.log(f);
+          console.log(f.text);
+          console.log(f.all);
             if(f.genre == genre){
               var title = f.title;
               genre_songs.push(title);
