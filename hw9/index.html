@@ -1,31 +1,30 @@
 <html>
 <head>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
-<script>
+  <script>
+  // Function to display serialized and tabular JSON data 
+  $(function() {
+     var setlist = [];
+     $.getJSON('setlist.json', function(data) {
+         $.each(data.songs, function(i, f) {
 
+            var serial = f; 
+            $("#serialized").append(serial);
 
-
-$(function() {
-   var setlist = [];
-   $.getJSON('setlist.json', function(data) {
-       $.each(data, function(i, f) {
-          var serial = data[i];
-          // var serial = f; 
-          $("#serialized").append(serial);
-
-          var tabular = "<tr>" + "<td>" + f.title + "</td>" +
-          "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>";
-          $(tabular).appendTo("#tableid tbody");
-      
+            var tabular = "<tr>" + "<td>" + f.title + "</td>" +
+            "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>";
+            $(tabular).appendTo("#tableid tbody");
+        
+       });
      });
-   });
-});
-
-</script>
+  });
+  </script>
 
 </head>
-  <body>
+
+<body>
 
   <h2>Part 1: Create a JSON</h2>
     <a href="setlist.json"> setlist.json </a>
@@ -64,31 +63,33 @@ $(function() {
       <option value="Alternative Rock">Alternative Rock</option>
     </select>
     <br><br>
-    <input type="submit">
+    <input type="submit" value="Show me the songs!">
   </form>
 
-  </body>
+</body>
 
-<script>
+  <script>
 
-function find_songs(genre){
-    var genre_songs = [];
-    $.getJSON('setlist.json', function(data) {
-       $.each(data.songs, function(i, f) {
-          if(f.genre == genre){
-            var title = f.title;
-            genre_songs.push(title);
-          }
-          return genre_songs;
+  // Function to query for songs in selected genre, returns their titles 
+  function find_songs(genre){
+      var genre_songs = [];
+      $.getJSON('setlist.json', function(data) {
+         $.each(data.songs, function(i, f) {
+            if(f.genre == genre){
+              var title = f.title;
+              genre_songs.push(title);
+            }
+            return genre_songs;
+       });
      });
-   });
-}
+  }
 
-var genre = document.getElementById("genre").value;
-console.log(genre);
-var genre_songs = find_songs(genre);
-console.log(genre_songs);
+  // Get genre selection from dropdown form
+  var genre = document.getElementById("genre").value;
+  console.log(genre);
+  var genre_songs = find_songs(genre);
+  console.log(genre_songs);
 
-</script>
+  </script>
 
 </html>
