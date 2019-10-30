@@ -25,6 +25,8 @@ function find_songs(genre){
     var genre_songs = [];
     $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
+        alert(f.genre);
+        alert(genre);
           if(f.genre == genre){
             genre_songs.push(f.title);
           }
