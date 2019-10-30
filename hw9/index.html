@@ -80,10 +80,10 @@ function find_songs(genre){
             var title = f.title;
             console.log(title);
             genre_songs.push(title);
+            return genre_songs;
           }
      });
    });
-  return genre_songs;
 }
 
 var genre = document.getElementById("genre").value;
