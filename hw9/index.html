@@ -10,7 +10,7 @@
      $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
 
-            var serial = f; 
+            var serial = f.all; 
             $("#serialized").append(serial);
 
             var tabular = "<tr>" + "<td>" + f.title + "</td>" +
@@ -75,9 +75,6 @@
       var genre_songs = [];
       $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
-          console.log(f);
-          console.log(f.text);
-          console.log(f.all);
             if(f.genre == genre){
               var title = f.title;
               genre_songs.push(title);
