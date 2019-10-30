@@ -11,8 +11,8 @@ $(function() {
           var tblRow = "<tr>" + "<td>" + f.title + "</td>" +
            "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>";
            $(tblRow).appendTo("#userdata tbody");
-
-          var serial = f.title + f.artist + f.year + f.genre; 
+ 
+          var serial = f.title + ": \n" + f.artist + ": \n" + f.year + ": \n" + f.genre; 
           alert(serial)
            $(serial).appendTo("#serial p");
            
