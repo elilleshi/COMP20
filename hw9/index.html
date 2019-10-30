@@ -10,7 +10,7 @@
      $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
 
-            var serial = f.all;
+            var serial = f;
             console.log(serial); 
             $("#serialized").append(serial);
 
