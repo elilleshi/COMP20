@@ -30,9 +30,8 @@
     <a href="setlist.json"> setlist.json </a>
   
   <h2>Part 2: Serialize and Display</h2>
-  <h4>Songs:</h4>
-
-    <div id="serialized"></div>
+<!--   <h4>Songs:</h4> -->
+      <div id="serialized"></div>
 
   <h2>Part 3: User Friendly Display</h2>
 
@@ -86,10 +85,11 @@
   }
 
   // Get genre selection from dropdown form
-  var genre = document.getElementById("genre").value;
-  console.log(genre);
-  var genre_songs = find_songs(genre);
-  console.log(genre_songs);
+  var genre = document.getElementById("genre");
+  var result = genre.options[genre.selectedIndex].value;
+  console.log(result);
+  // var genre_songs = find_songs(genre);
+  // console.log(genre_songs);
 
   </script>
 
