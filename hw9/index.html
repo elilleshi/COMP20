@@ -11,7 +11,7 @@ $(function() {
    $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
 
-          var serial = f.title + ": <br>" + f.artist + "<br>" + f.year + "<br>" + f.genre + "<br>" ; 
+          var serial = f; 
           $("#serialized").append(serial);
 
           var tabular = "<tr>" + "<td>" + f.title + "</td>" +
@@ -38,7 +38,7 @@ $(function() {
 
     <div>
     <div>
-         <table id= "tableid" border="2">
+         <table id= "tableid"  >
         <thead>
                   <th>Title</th>
                   <th>Artist</th>
@@ -86,7 +86,7 @@ function find_songs(genre){
 
 var genre = document.getElementById("genre").value;
 console.log(genre);
-var genre_songs = find_songs(toString(genre));
+var genre_songs = find_songs(genre);
 console.log(genre_songs);
 
 </script>
