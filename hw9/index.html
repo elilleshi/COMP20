@@ -21,6 +21,21 @@ $(function() {
 });
 
 
+function find_songs(genre){
+    var genre_songs = [];
+    $.getJSON('setlist.json', function(data) {
+       $.each(data.songs, function(i, f) {
+          if(f.genre == genre){
+            genre_songs.append(f.title)
+          }
+     });
+   });
+  return genre_songs;
+}
+
+var x = find_songs(Rap);
+alert(x);
+
 </script>
 
 </head>
