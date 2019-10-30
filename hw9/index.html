@@ -9,7 +9,6 @@ $(function() {
    $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
           var serial = f.title + ":\n" + f.artist + "\n" + f.year + "\n" + f.genre + "\n \n" ; 
-          alert(serial)
           $("#serialized").append(serial);
 
           var tabular = "<tr>" + "<td>" + f.title + "</td>" +
