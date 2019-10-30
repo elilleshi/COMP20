@@ -76,13 +76,10 @@ function find_songs(genre){
     $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
           if(f.genre == genre){
-            console.log('here');
             var title = f.title;
-            console.log(title);
             genre_songs.push(title);
-            console.log(genre_songs);
-            return genre_songs;
           }
+          return genre_songs;
      });
    });
 }
