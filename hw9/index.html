@@ -8,14 +8,14 @@ $(function() {
    var setlist = [];
    $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
-          var tblRow = "<tr>" + "<td>" + f.title + "</td>" +
-           "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>";
-           $(tblRow).appendTo("#userdata tbody");
- 
-          var serial = f.title + ":\n" + f.artist + "\n" + f.year + "\n" + f.genre; 
+          var serial = f.title + ":\n" + f.artist + "\n" + f.year + "\n" + f.genre + "\n \n" ; 
           alert(serial)
           $("#serialized").append(serial);
-           
+
+          var tabular = "<tr>" + "<td>" + f.title + "</td>" +
+          "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>";
+          $(tabular).appendTo("#tableid tbody");
+      
      });
    });
 });
@@ -28,7 +28,7 @@ $(function() {
 
     <div>
     <div>
-         <table id= "userdata" border="2">
+         <table id= "tableid" border="2">
         <thead>
                   <th>Title</th>
                   <th>Artist</th>
