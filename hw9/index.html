@@ -27,12 +27,19 @@ function find_songs(genre){
        $.each(data.songs, function(i, f) {
           if(f.genre == genre){
             var title = f.title;
-            console.log("here" + title);
+            console.log("here");
           }
      });
    });
   return genre_songs;
 }
+
+var genre = document.getElementById("genre").value;
+console.log(genre);
+var genre_songs = find_songs(genre);
+console.log(genre_songs);
+
+
 
 </script>
 
@@ -68,7 +75,7 @@ function find_songs(genre){
       <option value="Alternative Rock">Alternative Rock</option>
     </select>
     <br><br>
-    <input type="submit">
+    <input id="genre" type="submit">
   </form>
 
   </body>
