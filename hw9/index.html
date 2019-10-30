@@ -8,7 +8,8 @@ $(function() {
    var setlist = [];
    $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
-          var serial = f.title + ":\n" + f.artist + "\n" + f.year + "\n" + f.genre + "\n \n" ; 
+
+          var serial = f.title + ": <br>" + f.artist + "<br>" + f.year + "<br>" + f.genre + "<br>" ; 
           $("#serialized").append(serial);
 
           var tabular = "<tr>" + "<td>" + f.title + "</td>" +
@@ -40,8 +41,7 @@ $(function() {
       </div>
     </div>
 
-    <div id="serialized">
-    </div>
+    <div id="serialized"></div>
 
   </body>
 
