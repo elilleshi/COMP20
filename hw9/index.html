@@ -20,27 +20,6 @@ $(function() {
    });
 });
 
-
-function find_songs(genre){
-    var genre_songs = [];
-    $.getJSON('setlist.json', function(data) {
-       $.each(data.songs, function(i, f) {
-          if(f.genre == genre){
-            var title = f.title;
-            console.log("here");
-          }
-     });
-   });
-  return genre_songs;
-}
-
-var genre = document.getElementById("genre").value;
-console.log(genre);
-var genre_songs = find_songs(genre);
-console.log(genre_songs);
-
-
-
 </script>
 
 </head>
@@ -79,6 +58,26 @@ console.log(genre_songs);
   </form>
 
   </body>
+  
+<script>
+function find_songs(genre){
+    var genre_songs = [];
+    $.getJSON('setlist.json', function(data) {
+       $.each(data.songs, function(i, f) {
+          if(f.genre == genre){
+            var title = f.title;
+            console.log("here");
+          }
+     });
+   });
+  return genre_songs;
+}
 
+var genre = document.getElementById("genre").value;
+console.log(genre);
+var genre_songs = find_songs(genre);
+console.log(genre_songs);
+
+</script>
 
 </html>
