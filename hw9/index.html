@@ -4,6 +4,8 @@
 
 <script>
 
+
+
 $(function() {
    var setlist = [];
    $.getJSON('setlist.json', function(data) {
@@ -25,6 +27,15 @@ $(function() {
 </head>
   <body>
 
+  <h2>Part 1: Create a JSON</h2>
+    <a href="setlist.json"> setlist.json </a>
+  
+  <h2>Part 2: Serialize and Display</h2>
+
+    <div id="serialized"></div>
+
+  <h2>Part 3: User Friendly Display</h2>
+
     <div>
     <div>
          <table id= "tableid" border="2">
@@ -40,7 +51,6 @@ $(function() {
       </div>
     </div>
 
-    <div id="serialized"></div>
 
 
   <h2>Part 4: Filter the Data</h2>
@@ -60,12 +70,16 @@ $(function() {
   </body>
 
 <script>
+
 function find_songs(genre){
     var genre_songs = [];
     $.getJSON('setlist.json', function(data) {
        $.each(data.songs, function(i, f) {
           if(f.genre == genre){
+            console.log('here');
             var title = f.title;
+            console.log(title);
+            genre_songs.push(title);
           }
      });
    });
