@@ -53,8 +53,7 @@
 
 
   <h2>Part 4: Filter the Data</h2>
-  <form>
-    <select id="genre" name="songs">
+    <select id="genre">
       <option value="Rap">Rap</option>
       <option value="Gospel">Gospel</option>
       <option value="Alternative">Alternative</option>
@@ -62,17 +61,18 @@
       <option value="Hip-Hop">Hip-Hop</option>
       <option value="Alternative Rock">Alternative Rock</option>
     </select>
-    <br><br>
-    <input type="button" value="Show me the songs!">
-  </form>
-
+  
 </body>
 
   <script>
 
   // Function to query for songs in selected genre, returns their titles 
-  function find_songs(genre){
+  function find_songs(){
+      var result = document.getElementById("genre");
+      var genre = result.options[result.selectedIndex].text;
+      console.log(genre);
       var genre_songs = [];
+
       $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
             if(f.genre == genre){
@@ -80,17 +80,15 @@
               genre_songs.push(title);
             }
             return genre_songs;
+            console.log(genre_songs);
        });
      });
   }
-
   // Get genre selection from dropdown form
-  var genre = document.getElementById("genre");
-  var result = genre.options[genre.selectedIndex].value;
-  console.log(result);
   // var genre_songs = find_songs(genre);
   // console.log(genre_songs);
 
   </script>
-
+ <br><br>
+    <button type="button" value="Show me the songs!" onClick="find_songs()">
 </html>
