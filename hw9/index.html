@@ -75,13 +75,12 @@
 
       $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
-          console.log(f);
             if(f.genre == genre){
               var title = f.title;
               genre_songs.push(title);
             }
-            return genre_songs;
             console.log(genre_songs);
+            return genre_songs;
        });
      });
   }
@@ -91,5 +90,5 @@
 
   </script>
  <br><br>
-    <button type="button" value="Show me the songs!" onClick="find_songs()">
+    <button type="button" onClick="find_songs()">Show me the songs!</button>
 </html>
