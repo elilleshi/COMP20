@@ -41,9 +41,9 @@
   }
 
   function display_songs(array){
-      display.innerHTML = "";
       console.log(array);
       var display = document.getElementById('display_songs');
+      display.innerHTML = "";
       for (var i = 0; i < array.length; i++){
           display.innerHTML += array[i] + "<br>";
       }
