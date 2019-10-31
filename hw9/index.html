@@ -10,10 +10,11 @@
      var setlist = [];
      $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
+            // Part 2:
             var raw = f;
             var serial = JSON.stringify(raw);
             $("#serialized").append(serial + '<br>');
-
+            // Part 3:
             var tabular = "<tr>" + "<td>" + f.title + "</td>" +
             "<td>" + f.artist + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.genre + "</td>" + "</tr>";
             $(tabular).appendTo("#tableid tbody");
@@ -22,8 +23,8 @@
      });
   });
 
-
-  // Function to query for songs in selected genre, returns their titles 
+  // Part 4:
+  // Function to query for songs in selected genre, calls function to display titles 
   function find_songs(){
       // Get genre selection from dropdown form
       var result = document.getElementById("genre");
@@ -39,7 +40,7 @@
         display_songs(genre_songs);
      });
   }
-
+  // Append titles to empty div 
   function display_songs(array){
       console.log(array);
       var display = document.getElementById('display_songs');
@@ -60,7 +61,6 @@
     <a href="setlist.json"> setlist.json </a>
   
   <h2>Part 2: Serialize and Display</h2>
-<!--   <h4>Songs:</h4> -->
       <div id="serialized"></div>
 
   <h2>Part 3: User Friendly Display</h2>
@@ -80,10 +80,8 @@
       </div>
     </div>
 
-
-
   <h2>Part 4: Filter the Data</h2>
-      <h4> Select a genre to filter songs from the setlist </h4>
+    <h4> Select a genre to filter songs from the setlist </h4>
 
     <select id="genre">
       <option value="Rap">Rap</option>
@@ -93,11 +91,12 @@
       <option value="Hip-Hop">Hip-Hop</option>
       <option value="Alternative Rock">Alternative Rock</option>
     </select>
+
     <button type="button" onClick="find_songs()">Show me the songs!</button>
     <br>
-    <div id="display_songs"> </div>
-
+    <div id="display_songs"> </div> <!-- append titles to div -->
     <br>    <br>    <br>
-  </body>
+
+</body>
 
 </html>
