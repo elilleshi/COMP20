@@ -4,7 +4,7 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
   <script>
-    
+
   // Function to display serialized and tabular JSON data 
   $(function() {
      var setlist = [];
@@ -81,6 +81,8 @@
 
 
   <h2>Part 4: Filter the Data</h2>
+      <h4> Select a genre to filter songs from the setlist </h4>
+
     <select id="genre">
       <option value="Rap">Rap</option>
       <option value="Gospel">Gospel</option>
@@ -90,14 +92,7 @@
       <option value="Alternative Rock">Alternative Rock</option>
     </select>
   </body>
-
-<!--   <script>
-
-
-  </script> -->
-
-    <h4> Select a genre to filter songs from the setlist </h4>
+  <br>
     <button type="button" onClick="find_songs()">Show me the songs!</button>
-    <div id="display_songs"> </div>
 
 </html>
