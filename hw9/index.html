@@ -68,25 +68,22 @@
 
   // Function to query for songs in selected genre, returns their titles 
   function find_songs(){
+      // Get genre selection from dropdown form
       var result = document.getElementById("genre");
       var genre = result.options[result.selectedIndex].text;
-      console.log(genre);
       var genre_songs = [];
-
       $.getJSON('setlist.json', function(data) {
          $.each(data.songs, function(i, f) {
             if(f.genre == genre){
               var title = f.title;
               genre_songs.push(title);
             }
-            console.log(genre_songs);
-            return genre_songs;
        });
+        console.log(genre_songs);
+        return genre_songs;
      });
   }
-  // Get genre selection from dropdown form
-  // var genre_songs = find_songs(genre);
-  // console.log(genre_songs);
+
 
   </script>
  <br><br>
