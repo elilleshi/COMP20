@@ -4,6 +4,7 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
   <script>
+    
   // Function to display serialized and tabular JSON data 
   $(function() {
      var setlist = [];
@@ -20,6 +21,33 @@
        });
      });
   });
+
+
+  // Function to query for songs in selected genre, returns their titles 
+  function find_songs(){
+      // Get genre selection from dropdown form
+      var result = document.getElementById("genre");
+      var genre = result.options[result.selectedIndex].text;
+      var genre_songs = [];
+      $.getJSON('setlist.json', function(data) {
+         $.each(data.songs, function(i, f) {
+            if(f.genre == genre){
+              var title = f.title;
+              genre_songs.push(title);
+            }
+       });
+        display_songs(genre_songs);
+     });
+  }
+
+  function display_songs(array){
+      console.log(array);
+      var display = document.getElementById('display_songs');
+      for (var i = 0; i < array.length; i++){
+          display.innerHTML += array[i] + "<br>";
+      }
+  }
+
   </script>
 
 </head>
@@ -61,40 +89,15 @@
       <option value="Hip-Hop">Hip-Hop</option>
       <option value="Alternative Rock">Alternative Rock</option>
     </select>
-  
-    <div id="display_songs"> </div>
-</body>
+  </body>
 
-  <script>
-
-  // Function to query for songs in selected genre, returns their titles 
-  function find_songs(){
-      // Get genre selection from dropdown form
-      var result = document.getElementById("genre");
-      var genre = result.options[result.selectedIndex].text;
-      var genre_songs = [];
-      $.getJSON('setlist.json', function(data) {
-         $.each(data.songs, function(i, f) {
-            if(f.genre == genre){
-              var title = f.title;
-              genre_songs.push(title);
-            }
-       });
-        display_songs(genre_songs);
-     });
-  }
-
-  function display_songs(array){
-      console.log(array);
-      var display = document.getElementById('display_songs');
-      for (var i = 0; i < array.length; i++){
-          display.innerHTML += array[i] + "<br>";
-      }
-  }
+<!--   <script>
 
 
+  </script> -->
 
-  </script>
- <br><br>
+    <h4> Select a genre to filter songs from the setlist </h4>
     <button type="button" onClick="find_songs()">Show me the songs!</button>
+    <div id="display_songs"> </div>
+
 </html>
