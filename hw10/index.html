@@ -1,0 +1,83 @@
+<html>
+<head>
+
+<style type="text/css"> 
+	body{
+		font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter;
+		text-align: center
+	}
+	.button {background-color: #000; color: #fff; display: inline-block; padding: 4px 15px; border: none;}
+</style>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>	
+
+function check_api(){
+
+	var result = document.getElementById("term").value;
+	var base_url ="https://montanaflynn-spellcheck.p.rapidapi.com/check/?text=";
+	var url = base_url + result;
+
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": url,
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "montanaflynn-spellcheck.p.rapidapi.com",
+			"x-rapidapi-key": "d631475b81msh0086c29e6ee3d19p156483jsn826cbe400512"
+		}
+	}
+
+	$.ajax(settings).done(function (response) {
+		if (response.original == null){
+			$("#display_words").append("<br> <br> Please input text!");
+			return;
+		}
+		var original = response.original;
+		var suggestion = response.suggestion;
+		$("#display_original").append(original + "<br>");
+		$("#display_original").append("<br>");
+		$("#display_suggested").append(suggestion + "<br>");
+
+		for (var key in response.corrections){
+			$("#display_words").append("<br>");
+			$("#display_words").append("<b>"+key+"</b>" + ":" + "<br>");
+			$("#display_words").append("<br>");
+			for (var i in response.corrections[key]){
+				$("#display_words").append(response.corrections[key][i] + "<br>");
+			}
+		}
+	});
+
+}
+
+</script >
+
+<body>
+
+	<form>
+	  <h1> Input Sentence or Paragraph to Spell Check! </h1> <br>
+	  <textarea rows="5" cols="50" id="term" ></textarea> <br><br>
+	  <input class="button" type="button" onClick="check_api()" value="Spell Check Me!" </input>
+	</form>
+	<br> 
+
+	<h2> Original text: </h2>
+		<div  id="display_original"> </div> <!-- append titles to div -->
+	<h2> Suggested spell-checked text: </h2>
+		<div  id="display_suggested"> </div> <!-- append titles to div -->
+	<h2> Alternate suggestions for words spelled wrong in the text: </h2>
+		<div  id="display_words"> </div> <!-- append titles to div -->
+
+</body>
+
+	<div style="height: 100px"> </div>
+
+	<footer>
+		Powered by opensource <a href=https://rapidapi.com/montanaflynn/api/spellcheck>Spellcheck API</a> by @montanaflynn.
+	</footer>
+
+</head>
+</html>
