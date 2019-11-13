@@ -18,11 +18,13 @@
 
 function check_api(){
 
+	// Build the URL based on user input
 	var result = document.getElementById("term").value;
 	var base_url ="https://montanaflynn-spellcheck.p.rapidapi.com/check/?text=";
 	var url = base_url + result;
 
-	var settings = {
+	// Settings for API call
+	var api_call = {
 		"async": true,
 		"crossDomain": true,
 		"url": url,
@@ -33,11 +35,13 @@ function check_api(){
 		}
 	}
 
-	$.ajax(settings).done(function (response) {
+	// Ajax calls API and acts on response
+	$.ajax(api_call).done(function (response) {
 		if (response.original == null){
 			$("#display_words").append("<br> <br> Please input text!");
 			return;
 		}
+		// Parse, format, and append response data to divs 
 		var original = response.original;
 		var suggestion = response.suggestion;
 		$("#display_original").append(original + "<br>");
@@ -56,7 +60,7 @@ function check_api(){
 
 }
 
-</script >
+</script>
 
 <body>
 
@@ -68,16 +72,17 @@ function check_api(){
 	<br> 
 
 	<h2> Original text: </h2>
-		<div  id="display_original"> </div> <!-- append titles to div -->
+		<div  id="display_original"> </div> <!-- append to div -->
 	<h2> Suggested spell-checked text: </h2>
-		<div  id="display_suggested"> </div> <!-- append titles to div -->
+		<div  id="display_suggested"> </div> <!-- append to div -->
 	<h2> Alternate suggestions for words spelled wrong in the text: </h2>
-		<div  id="display_words"> </div> <!-- append titles to div -->
+		<div  id="display_words"> </div> <!-- append to div -->
 
 </body>
 
 	<div style="height: 100px"> </div>
 
+	<!-- Written Questions -->
 	<footer>
 		Powered by opensource <a href=https://rapidapi.com/montanaflynn/api/spellcheck>Spellcheck API</a> by @montanaflynn.
 		<br><br> This API checks and corrects the spelling of any input text. It returns suggestions for the entire input text and even more suggestions for each word spelled incorrectly. 
