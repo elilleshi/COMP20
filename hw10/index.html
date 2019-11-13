@@ -37,6 +37,11 @@ function check_api(){
 
 	// Ajax calls API and acts on response
 	$.ajax(api_call).done(function (response) {
+		// Empty div contents from previous calls
+		$("#display_original").html("");
+		$("#display_suggested").html("");
+		$("#display_words").html("");
+		
 		if (response.original == null){
 			$("#display_words").append("<br> <br> Please input text!");
 			return;
