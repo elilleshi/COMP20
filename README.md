@@ -1,27 +1,29 @@
 # COMP20 Web Programming
 Fall 2019
 
-##hw1: 
+## HW1: 
 Basics (simple personal information site)
 
-##hw2: 
+## HW2: 
 HTML & CSS Practice (create a website for a company)
 
-##hw3: 
+## HW3: 
 HTML5 & CSS Practice (immitate a website)
 
-##hw3b: 
+## HW3b: 
 XML Practice (data describes a setlist with songs)
 
-##hw4:
+## HW4:
 
-##hw5:
+## HW5:
 
-##hw6:
+## HW6:
 
-##hw8:
+## HW8:
 
-##hw9:
+## HW9:
 
+## Final Project:
+Jumbo Rate
 
 
