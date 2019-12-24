@@ -4,31 +4,46 @@ Fall 2019
 ## HW1: 
 Basics. Simple personal information site. HTML/CSS.
 
-URL:
+URL: https://elilleshi.github.io/Web-Programming/hw1/
 
 ## HW2: 
 HTML & CSS Practice. Created a website for an imaginary company, Jim's Peaches.
-URL:
+
+URL: https://elilleshi.github.io/Web-Programming/hw2/
 
 ## HW3: 
-HTML5 & CSS Practice (immitate a website)
-URL:
+HTML5 & CSS Practice. Imitation of a web page template. 
+
+URL: https://elilleshi.github.io/Web-Programming/hw3/ 
 
 ## HW3b: 
-XML Practice (data describes a setlist with songs)
-URL:
+XML Practice. Displays data pertaining to a setlist. 
 
 ## HW4:
 
+URL: https://elilleshi.github.io/Web-Programming/hw4/
+
+
 ## HW5:
+
+URL: https://elilleshi.github.io/Web-Programming/hw5/
+
 
 ## HW6:
 
-## HW8:
+URL: https://elilleshi.github.io/Web-Programming/hw6/
 
 ## HW9:
 
-## Final Project:
-Jumbo Rate
+URL: https://elilleshi.github.io/Web-Programming/hw9/
+
+## HW10:
+
+URL: https://elilleshi.github.io/Web-Programming/hw10/
+
+
+## Final Group Project:
+Jumbo Rate (see seperate repository)
+URL: http://jumbo-rate.herokuapp.com/
 
 
