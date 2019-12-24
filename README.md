@@ -2,16 +2,20 @@
 Fall 2019
 
 ## HW1: 
-Basics (simple personal information site)
+Basics. Simple personal information site. HTML/CSS.
+URL:
 
 ## HW2: 
-HTML & CSS Practice (create a website for a company)
+HTML & CSS Practice. Created a website for an imaginary company, Jim's Peaches.
+URL:
 
 ## HW3: 
 HTML5 & CSS Practice (immitate a website)
+URL:
 
 ## HW3b: 
 XML Practice (data describes a setlist with songs)
+URL:
 
 ## HW4:
 
