@@ -51,7 +51,8 @@ URL: https://elilleshi.github.io/Web-Programming/hw10/
 
 ## Final Group Project:
 
-Jumbo Rate (see seperate repository)
+Jumbo Rate (see seperate repository, https://github.com/elilleshi/JumboRate)
+
 URL: http://jumbo-rate.herokuapp.com/
 
 
