@@ -3,6 +3,7 @@ Fall 2019
 
 ## HW1: 
 Basics. Simple personal information site. HTML/CSS.
+
 URL:
 
 ## HW2: 
