@@ -1,5 +1,4 @@
-# COMP20 Web Programming
-# Fall 2019
+# COMP20 Web Programming, Fall 2019
 
 ## HW1: 
 HTML/CSS basics. Simple personal information site. 
